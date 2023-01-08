@@ -13,8 +13,8 @@ public class Gmail extends Email {
     public Gmail(String emailId, int inboxCapacity) {
         super(emailId);
         this.inboxCapacity = inboxCapacity;
-        this.Inbox = new ArrayList<>();
-        this.Trash = new ArrayList<>();
+        this.Inbox = new ArrayList<Triple<Date, String, String>>();
+        this.Trash = new ArrayList<Triple<Date, String, String>>();
 
     }
 
