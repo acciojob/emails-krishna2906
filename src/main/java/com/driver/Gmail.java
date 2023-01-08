@@ -2,6 +2,7 @@ package com.driver;
 
 import java.util.ArrayList;
 import java.util.Date;
+import org.apache.commons.lang3.tuple.Triple;
 
 public class Gmail extends Email {
 
@@ -13,8 +14,8 @@ public class Gmail extends Email {
     public Gmail(String emailId, int inboxCapacity) {
         super(emailId);
         this.inboxCapacity = inboxCapacity;
-        this.Inbox = new ArrayList<Triple<Date, String, String>>();
-        this.Trash = new ArrayList<Triple<Date, String, String>>();
+        this.Inbox = new ArrayList<>();
+        this.Trash = new ArrayList<>();
 
     }
 
@@ -29,7 +30,7 @@ public class Gmail extends Email {
             Trash.add(oldestMail);
         }
         Triple<Date, String, String> mail = Triple.of(date, sender, message);
-        Inbox.add(mail)
+        Inbox.add(mail);
     }
 
     public void deleteMail(String message){
